@@ -10,7 +10,7 @@ class UserServices {
         return result;
     }
     async registerUpUser(user) {
-        const {chatId, firstName, username} = user;
+        const {chatId, firstName} = user;
         const result = await UserSchema.findOne({chatId: chatId});
         if (result) {
             return({
