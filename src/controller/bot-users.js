@@ -11,8 +11,8 @@ export class UserController {
     async getOneUser(req, res) {
         tryCatchMiddleware(req, res, this.userServices.findOneUser(req.params.id));
     }
-    async postOneUser(req, res) {
-        tryCatchMiddleware(req, res, this.userServices.createOneUser({
+    async signUpUser(req, res) {
+        tryCatchMiddleware(req, res, this.userService.registerUpUser({
             chatId: req.body.chatId,
             firstName: req.body.firstName,
             username: req.body.username
