@@ -12,7 +12,7 @@ export class UserController {
         tryCatchMiddleware(req, res, this.userServices.findOneUser(req.params.id));
     }
     async signUpUser(req, res) {
-        tryCatchMiddleware(req, res, this.userService.registerUpUser({
+        tryCatchMiddleware(req, res, this.userServices.registerUpUser({
             chatId: req.body.chatId,
             firstName: req.body.firstName,
             username: req.body.username
