@@ -11,14 +11,14 @@ class UserServices {
     }
     async registerUpUser(user) {
         const {chatId, firstName, username} = user;
-        const result = await UserModel.findOne({chatId: chatId});
+        const result = await UserSchema.findOne({chatId: chatId});
         if (result) {
             return({
                 status: 404,
                 message: `User ${firstName} with chat id: ${chatId} allready existed`
             });
         }
-        await UserModel.create(user);
+        await UserSchema.create(user);
         return({
             status: 200,
             message: 'User was created'
