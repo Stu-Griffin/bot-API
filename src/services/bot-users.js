@@ -25,7 +25,7 @@ class UserServices {
         });
     }
     async removeOneUser(id) {
-        const result = await UserSchema.deleteOne({_id: id});
+        const result = await UserSchema.deleteOne({chatId: id});
         return result;
     }
 }
